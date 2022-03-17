@@ -1,6 +1,9 @@
 bin/
 bin-int/
+
 .vs/
 *.sln
 *.vcxproj
 *.vcxproj.user
+
+src/vendor/OpenCV/source/
