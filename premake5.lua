@@ -54,12 +54,20 @@ project "EquirectangleToCubemap"
 
 	filter "configurations:Release"
 		links{ "opencv_world455.lib", }
+		prebuildcommands 
+		{ 
+			"{COPY} src/vendor/OpenCV/build/x64/vc15/bin/opencv_world455.dll bin/" ..outputdir.. "/%{prj.name}"
+		}
 		defines "NDEBUG"
 		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Distribution"
 		links{ "opencv_world455.lib", }
+		prebuildcommands 
+		{ 
+			"{COPY} src/vendor/OpenCV/build/x64/vc15/bin/opencv_world455.dll bin/" ..outputdir.. "/%{prj.name}"
+		}
 		defines "NDEBUG"
 	runtime "Release"
 		optimize "On"
